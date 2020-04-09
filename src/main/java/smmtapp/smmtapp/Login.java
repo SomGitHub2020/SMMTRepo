@@ -3,7 +3,7 @@ package smmtapp.smmtapp;
 public class Login {
 
 	private String ip;
-	private int port;
+	private String port;
 	private String user;
 	private String password;
 	private String stringURL;
@@ -16,11 +16,11 @@ public class Login {
 		this.ip = ip;
 	}
 
-	public int getPort() {
+	public String getPort() {
 		return port;
 	}
 
-	public void setPort(int port) {
+	public void setPort(String port) {
 		this.port = port;
 	}
 
