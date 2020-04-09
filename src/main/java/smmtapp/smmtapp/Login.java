@@ -45,7 +45,7 @@ public class Login {
 	}
 
 	public void setStringURL(String stringURL) {
-		this.stringURL = "http://"+ ip + ":" + port + "/XMII/Illuminator?service=scheduler&mode=List&content-type=text/xml&IllumLoginName=" + user + "&IllumLoginPassword=" + password;;
+		this.stringURL = stringURL;
 	}
 
 }
