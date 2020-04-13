@@ -38,9 +38,9 @@ public class MSSQLConnection {
 		System.out.println("Program started");
 		MSSQLConnection msserverCon = new MSSQLConnection();
 		msserverCon.dbConn(user, pass);
-		msserverCon.insertNewEmp(ID,FName,LName);
-		msserverCon.insertMIISchData(SchID,SchName,BLSPath,Pattern);
-		msserverCon.insertDummyData(Status,ErrMsg);
+		//msserverCon.insertNewEmp(ID,FName,LName);
+		//msserverCon.insertMIISchData(SchID,SchName,BLSPath,Pattern);
+		//msserverCon.insertDummyData(Status,ErrMsg);
 	}
 
 
