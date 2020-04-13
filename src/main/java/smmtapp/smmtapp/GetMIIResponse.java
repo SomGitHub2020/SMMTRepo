@@ -8,11 +8,14 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class GetMIIResponse {
-	 public String executeGETService(){
+	
+	//public String stringURL = null;
+	
+	 public String executeGETService(String stringURL){
          String output, outValue = null;
          try {
 
-            URL url = new URL("http://9.220.9.130:50200/XMII/Illuminator?service=scheduler&mode=List&content-type=text/xml&IllumLoginName=som&IllumLoginPassword=password@1");
+            URL url = new URL(stringURL);
              HttpURLConnection conn = (HttpURLConnection) url.openConnection();
              //conn.setRequestMethod("GET");
 
