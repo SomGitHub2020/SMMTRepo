@@ -53,6 +53,7 @@ public class GetMIIResponse {
 			//NodeList nodes = ((org.w3c.dom.Document) doc).getElementsByTagName("TimeZoneResponse");
 	        
 	        // iterate the employees
+			/*
 	        for (int i = 0; i < nodes.getLength(); i++) {
 	           Element element = (Element) nodes.item(i);
 	           
@@ -72,17 +73,18 @@ public class GetMIIResponse {
 	           line = (Element) pattern.item(0);
 	           String Pattern = getCharacterDataFromElement(line);
 	           
-		       MSSQLConnection msserverCon = new MSSQLConnection();
 		      
-		       msserverCon.dbConn("som_sa","password@12345");
-		       String returnMsg = msserverCon.insertMIISchData(ID,Name,FullName,Pattern);
+		       //String returnMsg = msserverCon.insertMIISchData(ID,Name,FullName,Pattern);
 		      
 		       outValue = outValue + returnMsg;
 		       System.out.println("Data is inserted "+returnMsg);
 	        }
-	        
-
-	        return outValue;
+	        */
+			
+			 MSSQLConnection msserverCon = new MSSQLConnection();
+		      
+		     String outValue1 = msserverCon.dbConn("som_sa","password@12345");
+	        return outValue1;
 	}
 
 
