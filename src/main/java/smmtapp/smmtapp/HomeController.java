@@ -15,6 +15,8 @@
  */
 package smmtapp.smmtapp;
 
+import java.io.IOException;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -36,7 +38,12 @@ public class HomeController {
 		  
 		  String StrURL = "http://"+login.getIp()+":"+login.getPort()+"/XMII/Illuminator?service=scheduler&mode=List&content-type=text/xml&IllumLoginName=" + login.getUser() + "&IllumLoginPassword=" + login.getPassword();
 		  
-		  login.setStringURL(StrURL+" MII Response 1 "+ new GetMIIResponse().executeGETService(StrURL));
+		  try {
+			login.setStringURL(StrURL+" MII Response 1 "+ new GetMIIResponse().executeGETService(StrURL));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		  
 		  return "welcome";
 	  }
