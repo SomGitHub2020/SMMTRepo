@@ -34,9 +34,10 @@ public class HomeController {
 	  @PostMapping("/login")
 	  public String loginSubmit(@ModelAttribute Login login) {
 		  
-		  login.setStringURL("https://"+login.getIp()+":"+login.getPort());
+		  String StrURL = "https://"+login.getIp()+":"+login.getPort();
 		  
-		  
-	    return "welcome";
+		  login.setStringURL(StrURL);
+
+		  return "welcome";
 	  }
 }
