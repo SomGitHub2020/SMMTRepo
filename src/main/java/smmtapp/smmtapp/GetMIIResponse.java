@@ -21,10 +21,27 @@ import org.xml.sax.SAXException;
 
 public class GetMIIResponse {
 	
-	//public String stringURL = null;
+	
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String stringURL = "http://9.220.9.130:50200/XMII/Illuminator?service=scheduler&mode=List&content-type=text/xml&IllumLoginName=som&IllumLoginPassword=password@1";
+		
+		try {
+			System.out.print(new GetMIIResponse().executeGETService(stringURL));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 	
 	public String executeGETService(String stringURL) throws IOException{
 		String output, outValue = null;
+		
+		String IP = "9.220.9.130";
+		String Port = "50200";
+		String User = "som";
+		String Pswd = "password@1";
 		
 			URL url = new URL(stringURL);
 			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -53,7 +70,7 @@ public class GetMIIResponse {
 			//NodeList nodes = ((org.w3c.dom.Document) doc).getElementsByTagName("TimeZoneResponse");
 	        
 	        // iterate the employees
-			/*
+			
 	        for (int i = 0; i < nodes.getLength(); i++) {
 	           Element element = (Element) nodes.item(i);
 	           
@@ -71,20 +88,21 @@ public class GetMIIResponse {
 	           
 	           NodeList pattern = element.getElementsByTagName("Pattern");
 	           line = (Element) pattern.item(0);
-	           String Pattern = getCharacterDataFromElement(line);
+	           String Pattern = getCharacterDataFromElement(line).replaceAll(" ", "");
 	           
+	           //MSSQLConnection msserverCon = new MSSQLConnection();
+			   //String outValue1 = msserverCon.dbConn("som_sa","password@12345");
+	           //String returnMsg = msserverCon.insertMIISchData(ID,Name,FullName,Pattern);
+	           
+	           SAPMIISchedulerInsert sapMIISchInsert = new SAPMIISchedulerInsert();
+		       String returnMsg = sapMIISchInsert.insertMIISchData(IP, Port, User, Pswd, ID,Name,FullName,Pattern);
 		      
-		       //String returnMsg = msserverCon.insertMIISchData(ID,Name,FullName,Pattern);
 		      
 		       outValue = outValue + returnMsg;
 		       System.out.println("Data is inserted "+returnMsg);
 	        }
-	        */
-			
-			 MSSQLConnection msserverCon = new MSSQLConnection();
-		      
-		     String outValue1 = msserverCon.dbConn("som_sa","password@12345");
-	        return outValue1;
+	        
+			return outValue;
 	}
 
 
