@@ -61,6 +61,12 @@ public class HomeController {
 		  
 		  return "welcome";
 	  }
+	  
+	    public String getMIISchJob(Model model) {
+	        model.addAttribute("miischjobs", listMIISchJobs);
+	        
+	        return "display";
+	    }
 	 
 	  
 	  @PostConstruct
@@ -69,11 +75,7 @@ public class HomeController {
 	    
 	    }
 	  
-	  @PostMapping("/login")
-	    public String getMIISchJob(Model model) {
-	        model.addAttribute("miischjobs", listMIISchJobs);
-	        
-	        return "display";
-	    }
+	  
+
 	   
 }
