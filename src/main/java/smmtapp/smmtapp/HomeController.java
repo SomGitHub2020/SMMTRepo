@@ -31,19 +31,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-
-import org.w3c.dom.CharacterData;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-import org.xml.sax.SAXException;
-
-
-
 @Controller
 public class HomeController {
 
@@ -54,13 +41,11 @@ public class HomeController {
       return "redirect:/login";
     }
 	
-	
 	@GetMapping("/login")
 	  public String loginForm(Model model) {
 	    model.addAttribute("login", new Login());
 	    return "login";
 	  }
-
 	
 	  @PostMapping("/login")
 	  public String loginSubmit(@ModelAttribute Login login) {
@@ -79,11 +64,19 @@ public class HomeController {
 	  
 	  @GetMapping("/display")
 	    public String getMIISchJob(Model model) {
-	        model.addAttribute("miischjobs", listMIISchJobs);
+	      
+		  DisplayMIISchJob displayMIIjob = new DisplayMIISchJob();
+		  try {
+			displayMIIjob.displayMIISchJob(listMIISchJobs);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		  
+		  model.addAttribute("miischjobs", listMIISchJobs);
 	        
-	        return "display";
+	      return "display";
 	    }
-	 
 	  
 	  @PostConstruct
 	    public void init() throws Exception {
