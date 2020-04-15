@@ -6,8 +6,9 @@
 </head>
 <body>
 	<h1>Result</h1>
-    <p th:text="'MII URL is: ' + ${login.StringURL}" />
+    <p th:text="'MII Server' + ${login.StringURL} + 'is saved successfully!'" />
     <br>
     
+    <a href="/display">Please view MII Scheduler Job List</a>
 </body>
 </html>

@@ -53,7 +53,7 @@ public class HomeController {
 		  String StrURL = "http://"+login.getIp()+":"+login.getPort()+"/XMII/Illuminator?service=scheduler&mode=List&content-type=text/xml&IllumLoginName=" + login.getUser() + "&IllumLoginPassword=" + login.getPassword();
 		  
 		  try {
-			login.setStringURL(StrURL+" MII Response 1 "+ new GetMIIResponse().executeGETService(StrURL));
+			login.setStringURL(new GetMIIResponse().executeGETService(StrURL));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

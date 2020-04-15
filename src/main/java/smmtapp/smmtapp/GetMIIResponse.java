@@ -43,6 +43,8 @@ public class GetMIIResponse {
 		String User = "som";
 		String Pswd = "password@1";
 		
+		outValue = " hosted at " + IP + " with " + Port;
+		
 			URL url = new URL(stringURL);
 			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 		
@@ -97,8 +99,7 @@ public class GetMIIResponse {
 	           SAPMIISchedulerInsert sapMIISchInsert = new SAPMIISchedulerInsert();
 		       String returnMsg = sapMIISchInsert.insertMIISchData(IP, Port, User, Pswd, ID,Name,FullName,Pattern);
 		      
-		      
-		       outValue = outValue + returnMsg;
+		      //outValue = outValue + returnMsg;
 		       System.out.println("Data is inserted "+returnMsg);
 	        }
 	        
