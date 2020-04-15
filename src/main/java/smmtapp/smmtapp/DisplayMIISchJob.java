@@ -20,9 +20,9 @@ import org.xml.sax.SAXException;
 
 public class DisplayMIISchJob {
 	
-	public void displayMIISchJob() throws IOException{
 	
-		List<MIISchJob> listMIISchJobs = new ArrayList<MIISchJob>();
+	public void displayMIISchJob(List<MIISchJob> listMIISchJobs2) throws IOException{
+	
 
 	  String stringURL = "http://9.220.9.130:50200/XMII/Illuminator?IsTesting=T&QueryTemplate=Default/Som/SMMT/SQL_GetMIISchJobList&Content-Type=text/xml&IllumLoginName=som&IllumLoginPassword=password@1";
 	  
@@ -78,7 +78,9 @@ public class DisplayMIISchJob {
          //String returnMsg = msserverCon.insertMIISchData(ID,Name,FullName,Pattern);
          
                
-			listMIISchJobs.add(new MIISchJob(ID,Name,FullName,Pattern));
+         listMIISchJobs2.add(new MIISchJob(ID,Name,FullName,Pattern));
+			
+			System.out.print(i);
 
       }
       

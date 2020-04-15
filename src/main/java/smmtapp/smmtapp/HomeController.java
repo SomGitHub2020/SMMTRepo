@@ -89,7 +89,7 @@ public class HomeController {
 	    public void init() throws Exception {
 		  
 		  DisplayMIISchJob displayMIIjob = new DisplayMIISchJob();
-		  displayMIIjob.displayMIISchJob();
+		  displayMIIjob.displayMIISchJob(listMIISchJobs);
 		  
 	  }
 	  
