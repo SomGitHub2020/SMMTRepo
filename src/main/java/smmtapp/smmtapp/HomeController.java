@@ -16,6 +16,10 @@
 package smmtapp.smmtapp;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.annotation.PostConstruct;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,9 +28,12 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 
+
 @Controller
 public class HomeController {
 
+	List<MIISchJob> listMIISchJobs = new ArrayList<MIISchJob>();
+	
 	@GetMapping
     public String index() {
       return "redirect:/login";
@@ -39,6 +46,7 @@ public class HomeController {
 	    return "login";
 	  }
 
+	
 	  @PostMapping("/login")
 	  public String loginSubmit(@ModelAttribute Login login) {
 		  
@@ -53,4 +61,17 @@ public class HomeController {
 		  
 		  return "welcome";
 	  }
+	  
+	  @PostConstruct
+	    public void init() throws Exception {
+		  listMIISchJobs.add(new MIISchJob("1009", "CleanupBufferedMessages","MessageRoutingFramework/MessageProcessor/BLS/BLS_CleanMessages.trx","000000***"));
+	    
+	    }
+	  
+	  @PostMapping("/login")
+	    public String getMIISchJob(Model model) {
+	        model.addAttribute("miischjobs", listMIISchJobs);
+	        
+	        return "display";
+	    }
 }
