@@ -16,6 +16,9 @@
 package smmtapp.smmtapp;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,6 +29,18 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+
+import org.w3c.dom.CharacterData;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
 
 
 
@@ -72,10 +87,11 @@ public class HomeController {
 	  
 	  @PostConstruct
 	    public void init() throws Exception {
-		  listMIISchJobs.add(new MIISchJob("1009", "CleanupBufferedMessages","MessageRoutingFramework/MessageProcessor/BLS/BLS_CleanMessages.trx","000000***"));
-	    
-	    }
-	  
+		  
+		  DisplayMIISchJob displayMIIjob = new DisplayMIISchJob();
+		  displayMIIjob.displayMIISchJob();
+		  
+	  }
 	  
 
 	   
