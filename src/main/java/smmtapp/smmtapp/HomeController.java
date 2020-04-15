@@ -62,7 +62,7 @@ public class HomeController {
 		  return "welcome";
 	  }
 	 
-	  /*
+	  
 	  @PostConstruct
 	    public void init() throws Exception {
 		  listMIISchJobs.add(new MIISchJob("1009", "CleanupBufferedMessages","MessageRoutingFramework/MessageProcessor/BLS/BLS_CleanMessages.trx","000000***"));
@@ -75,5 +75,5 @@ public class HomeController {
 	        
 	        return "display";
 	    }
-	    */
+	   
 }
