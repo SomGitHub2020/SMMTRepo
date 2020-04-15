@@ -62,6 +62,7 @@ public class HomeController {
 		  return "welcome";
 	  }
 	  
+	  @GetMapping("/display")
 	    public String getMIISchJob(Model model) {
 	        model.addAttribute("miischjobs", listMIISchJobs);
 	        
