@@ -34,7 +34,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class HomeController {
 
-	List<MIISchJob> listMIISchJobs = new ArrayList<MIISchJob>();
+	
 	
 	@GetMapping
     public String index() {
@@ -65,6 +65,8 @@ public class HomeController {
 	  @GetMapping("/display")
 	    public String getMIISchJob(Model model) {
 	      
+		  List<MIISchJob> listMIISchJobs = new ArrayList<MIISchJob>();
+		  
 		  DisplayMIISchJob displayMIIjob = new DisplayMIISchJob();
 		  try {
 			displayMIIjob.displayMIISchJob(listMIISchJobs);
@@ -80,6 +82,8 @@ public class HomeController {
 	  
 	  @PostConstruct
 	    public void init() throws Exception {
+		  
+		  List<MIISchJob> listMIISchJobs = new ArrayList<MIISchJob>();
 		  
 		  DisplayMIISchJob displayMIIjob = new DisplayMIISchJob();
 		  displayMIIjob.displayMIISchJob(listMIISchJobs);
