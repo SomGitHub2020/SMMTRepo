@@ -4,7 +4,8 @@
     <title>Getting Started: Handling Form Submission</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
-<body align="center" bgcolor="#99ebff">
+<body bgcolor="#99ebff">
+<div class="" style="width:100%" align="center"> 
 	<h1>Please Enter your details</h1>
     <form action="#" th:action="@{/login}" th:object="${login}" method="post">
     	<p>IP: <input type="text" th:field="*{ip}" /></p>
@@ -14,5 +15,6 @@
      
         <p><input type="submit" value="Save" /> <input type="reset" value="Reset" /></p>
     </form>
+   </div>
 </body>
 </html>
