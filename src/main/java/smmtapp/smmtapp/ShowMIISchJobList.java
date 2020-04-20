@@ -9,11 +9,11 @@ import java.util.List;
 
 public class ShowMIISchJobList {
 
-	public String displayMIISchJobs(List<MIISchJob> listMIISchJobs2) throws IOException{
+	public String displayMIISchJobs(List<MIISchJob> listMIISchJobs1) throws IOException{
 		String result="";
 		try{  
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection con=DriverManager.getConnection( "jdbc:mysql://smmtconn:3306/smmtdb?user=root&password=G2WBtaWijqhexqYJ&useSSL=false");  
+			Connection con=DriverManager.getConnection( "jdbc:mysql://smmtconn:3306/smmtdb?user=root&password=IwfGUwTxbE1jwvVa&useSSL=false");  
 			Statement stmt=con.createStatement();  
 			ResultSet rs=stmt.executeQuery("SELECT * FROM `MIISchedulerJobs`");  
 			while(rs.next()){  
@@ -23,7 +23,7 @@ public class ShowMIISchJobList {
 				String Pattern = rs.getString(4).replaceAll(" ", "");
 			
 				
-				listMIISchJobs2.add(new MIISchJob(ID,Name,FullName,Pattern));
+				listMIISchJobs1.add(new MIISchJob(ID,Name,FullName,Pattern));
 			}
 			result = "SUCCESS";
 			con.close();
