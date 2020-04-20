@@ -92,12 +92,12 @@ public class GetMIIResponse {
 	           line = (Element) pattern.item(0);
 	           String Pattern = getCharacterDataFromElement(line).replaceAll(" ", "");
 	           
-	           //MSSQLConnection msserverCon = new MSSQLConnection();
-			   //String outValue1 = msserverCon.dbConn("som_sa","password@12345");
-	           //String returnMsg = msserverCon.insertMIISchData(ID,Name,FullName,Pattern);
+	           MySQLConnection myserverCon = new MySQLConnection();
+			   //String outValue = myserverCon.dbConn("root","IwfGUwTxbE1jwvVa");
+	           String returnMsg = myserverCon.insertMIISchData(ID,Name,FullName,Pattern);
 	           
-	           SAPMIISchedulerInsert sapMIISchInsert = new SAPMIISchedulerInsert();
-		       String returnMsg = sapMIISchInsert.insertMIISchData(IP, Port, User, Pswd, ID,Name,FullName,Pattern);
+	           //SAPMIISchedulerInsert sapMIISchInsert = new SAPMIISchedulerInsert();
+		       //String returnMsg = sapMIISchInsert.insertMIISchData(IP, Port, User, Pswd, ID,Name,FullName,Pattern);
 		      
 		      //outValue = outValue + returnMsg;
 		       System.out.println("Data is inserted "+returnMsg);

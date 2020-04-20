@@ -15,7 +15,7 @@ public class MySQLConnection {
 	//private static final String dbURL = "jdbc:sqlserver://192.168.1.102:1433;databasename=SOMDB";
 	//private static final String dbURL = "jdbc:sqlserver://9.81.193.106:1433;databasename=SOMDB";
 	//private static final String dbURL = "jdbc:sqlserver://10.116.65.81:1433;databasename=PlasticResin";
-	private static final String dbURL = "jdbc:mysql://mysql1234:3306/sampledb1234";
+	private static final String dbURL = "jdbc:mysql://smmtconn:3306/smmtdb";
 	//jdbc:mysql://mysql:3306/sampledb?user=root&password=hDgjFKdKO8avDhBt&useSSL=false
 	
 	
@@ -23,7 +23,7 @@ public class MySQLConnection {
 	//private static final String pass = "password@12345";
 	
 	private static final String user = "root"; 
-	private static final String pass = "G2WBtaWijqhexqYJ";
+	private static final String pass = "IwfGUwTxbE1jwvVa";
 	
 	private static final String dbURLwithUserPswd = dbURL + "?user=" + user + "&password=" + pass + "&useSSL=false";
 	
