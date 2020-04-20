@@ -16,9 +16,7 @@
 package smmtapp.smmtapp;
 
 import java.io.IOException;
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -67,9 +65,10 @@ public class HomeController {
 	      
 		  List<MIISchJob> listMIISchJobs = new ArrayList<MIISchJob>();
 		  
-		  DisplayMIISchJob displayMIIjob = new DisplayMIISchJob();
+		  //DisplayMIISchJob displayMIIjob = new DisplayMIISchJob();
+		  ShowMIISchJobList displayMIIjob = new ShowMIISchJobList();
 		  try {
-			displayMIIjob.displayMIISchJob(listMIISchJobs);
+			displayMIIjob.displayMIISchJobs(listMIISchJobs);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -85,8 +84,9 @@ public class HomeController {
 		  
 		  List<MIISchJob> listMIISchJobs = new ArrayList<MIISchJob>();
 		  
-		  DisplayMIISchJob displayMIIjob = new DisplayMIISchJob();
-		  displayMIIjob.displayMIISchJob(listMIISchJobs);
+		//DisplayMIISchJob displayMIIjob = new DisplayMIISchJob();
+		  ShowMIISchJobList displayMIIjob = new ShowMIISchJobList();
+		  displayMIIjob.displayMIISchJobs(listMIISchJobs);
 		  
 	  }
 	  

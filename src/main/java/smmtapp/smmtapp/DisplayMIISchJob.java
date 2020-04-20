@@ -23,7 +23,7 @@ public class DisplayMIISchJob {
 	
 	public void displayMIISchJob(List<MIISchJob> listMIISchJobs2) throws IOException{
 	
-
+	
 	  String stringURL = "http://9.220.9.130:50200/XMII/Illuminator?IsTesting=T&QueryTemplate=Default/Som/SMMT/SQL_GetMIISchJobList&Content-Type=text/xml&IllumLoginName=som&IllumLoginPassword=password@1";
 	  
 	  	URL url = new URL(stringURL);
