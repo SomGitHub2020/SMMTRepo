@@ -21,8 +21,6 @@ import org.xml.sax.SAXException;
 
 public class GetMIIResponse {
 	
-	
-	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		String stringURL = "http://9.220.9.130:50200/XMII/Illuminator?service=scheduler&mode=List&content-type=text/xml&IllumLoginName=som&IllumLoginPassword=password@1";
